@@ -4,7 +4,9 @@ import cn.nukkit.plugin.PluginBase;
 
 public class Loader extends PluginBase {
 
-    /*
-        Nothing to do here
-     */
+    @Override
+    public void onEnable() {
+        getServer().getPluginManager().registerEvents(new EventsTranslatorLlama2EAPI(this), this);
+        getServer().getPluginManager().registerEvents(new EventsTranslatorEAPI2Llama(this), this);
+    }
 }
